@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import {Container,Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
+import {Container,Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
+import CartWidget from './CartWidget';
+
 
 export default class NavbarComp extends Component {
     render() {
         return (
             <div>
-                <Navbar bg="dark" variant={"dark"} expand="lg">
+                <Navbar bg="white" expand="lg">
   <Container fluid>
     <Navbar.Brand href="#">Tu tienda</Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -24,16 +26,8 @@ export default class NavbarComp extends Component {
             Ver todas las categorías
           </NavDropdown.Item>
         </NavDropdown>
+        <CartWidget/>
       </Nav>
-      <Form className="d-flex">
-        <FormControl
-          type="search"
-          placeholder="Search"
-          className="me-2"
-          aria-label="Search"
-        />
-        <Button variant="outline-success">Search</Button>
-      </Form>
     </Navbar.Collapse>
   </Container>
 </Navbar>
