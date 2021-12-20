@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react';
-import {getFetch} from "../helpers/getFetch"
+import {getFetch} from "../helpers/getFetch";
+import itemList from './itemList/itemList';
+
 
 
 function ItemListContainer( {greeting}) {
@@ -19,31 +21,7 @@ function ItemListContainer( {greeting}) {
             {loading ?
                 <h2>Cargando...</h2>
                 :      
-                productos.map((prod)=> <div className="col-md-4">
-                                            <div className="card w-100 mt-5">
-                                                <div className="card-header">
-                                                    {`${prod.name} - ${prod.categoria}`}
-                                                </div>
-                                                <div className="card-body">
-                                                    <img src={prod.foto} alt="" className="w-50"/>
-                                                    {prod.price}
-                                                </div>
-                                                <div className="card-footer">
-                                                    <button className="btn btn-outline-primary btn-block">
-                                                        Detalle del producto
-                                                    </button>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-                
-                
-                
-                
-                
-                    )       
+                <itemList productos= {productos}/>
                 }
         </div>
 
